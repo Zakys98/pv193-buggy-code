@@ -8,8 +8,9 @@ int memcheckFailDemo(int *arrayStack, unsigned int arrayStackLen,
     Static[100] = 0;
     Stack[100] = 0;
 
-    for (int i = 0; i <= 5; i++)
+    for (int i = 0; i <= 5; i++) {
         Stack[i] = 0;
+    }
 
     int *array = new int[5];
     array[100] = 0;
@@ -27,6 +28,9 @@ int memcheckFailDemo(int *arrayStack, unsigned int arrayStackLen,
 int main(void) {
     int arrayStack[5];
     int *arrayHeap = new int[5];
+    if (arrayHeap == nullptr) {
+        return 1;
+    }
     memcheckFailDemo(arrayStack, 5, arrayHeap, 5);
     return 0;
 }
